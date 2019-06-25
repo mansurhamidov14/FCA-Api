@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^([\w\_\-]+)$ ./index.php?action=$1
+RewriteRule ^check_serial_status/(\d+)$ ./index.php?action=check_serial_status&serial=$1
