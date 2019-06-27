@@ -1,11 +1,13 @@
 <?
+if (!defined("_VALID_PHP")) {
+    die('Direct access to this location is not allowed.');
+}
 require_once 'models/user.php';
 $post_data = $_POST;
 
 $mandatory_keys = ['email'];
 foreach ($mandatory_keys as $key) {
   if (empty($post_data[$key])) {
-    header('Content-type: application/json');
     print json_encode([
       'success'  => false,
       'message'  => 'Please provide user ' . $key,
@@ -26,7 +28,6 @@ $post_data['created_at']   = date('Y-m-d H:i:s');
 
 if(user::save($post_data)) {
   $post_data['is_active'] = (bool)$post_data['is_active'];
-  header('Content-type: application/json');
   print json_encode([
     'success'  => true,
     'message'  => 'User successfully created',

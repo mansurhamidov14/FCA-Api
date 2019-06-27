@@ -1,6 +1,8 @@
 <?php
+define('_VALID_PHP', true);
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+header('Content-type: application/json');
 require_once 'App.php';
 $action = @$_GET['action'];
 $registered_actions = ['add_user', 'get_users', 'activate_user', 'check_serial_status'];

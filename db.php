@@ -1,4 +1,5 @@
 <?
+defined('_VALID_PHP') or die('No direct script access.');
 require_once 'config.php';
 
 class database {

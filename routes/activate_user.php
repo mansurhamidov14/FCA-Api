@@ -1,4 +1,7 @@
 <?
+if (!defined("_VALID_PHP")) {
+    die('Direct access to this location is not allowed.');
+}
 header('Content-type: application/json');
 require_once 'models/user.php';
 $serial = @$_POST['serial'];
